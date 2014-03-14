@@ -8,16 +8,8 @@
 #
 ############################################################
 
-MAKE_FOR_LIB := n
-
 obj-$(CONFIG_AML_PMU_ALGORITHM_SUPPORT) += aml_pmu_dev.o
 
 aml_pmu_dev-objs =
 aml_pmu_dev-objs += aml_pmu_module.o
-
-ifeq ($(MAKE_FOR_LIB), y)
 aml_pmu_dev-objs += aml_pmu_algorithm.o 
-else 
-aml_pmu_dev-objs += ../../../../../../../../hardware/amlogic/pmu/aml_pmu_algorithm_lib.z 
-endif
-
